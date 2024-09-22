@@ -13,8 +13,7 @@ public class ServerLauncher {
 
     public static void main(String[] args) throws IOException {
 
-        System.out.println(Arrays.toString(Security.getProviders()));
-                /*
+
         String password = null;
         int websocketPort = 3000, javaPort = 4000;
         if(args.length >= 1) {
@@ -28,7 +27,6 @@ public class ServerLauncher {
         }
         createApplication(password, websocketPort, javaPort);
 
-                 */
     }
 
 
