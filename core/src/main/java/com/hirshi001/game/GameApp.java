@@ -131,7 +131,7 @@ public class GameApp extends Game {
             if (client.supportsTCP()) client.startTCP().perform().get();
             if (client.supportsUDP()) client.startUDP().perform().get();
 
-            Thread.sleep(10000);
+            Thread.sleep(1000);
 
         } catch (IOException | ExecutionException | InterruptedException e) {
             throw new RuntimeException(e);

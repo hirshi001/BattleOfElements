@@ -5,6 +5,7 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.Vector2;
@@ -58,6 +59,7 @@ public class GameWorldRenderer extends InputAdapter {
     Box2DDebugRenderer debugRenderer = new Box2DDebugRenderer();
     OrthographicCamera camera;
     Viewport viewport;
+    Texture ground = new Texture("game/other/Ground.png");
 
     Map<UUID, EntityRenderer<?>> entityRenderers;
 
@@ -126,7 +128,9 @@ public class GameWorldRenderer extends InputAdapter {
         camera.update();
         viewport.apply(false);
 
-        debugRenderer.render(gameWorld.world, camera.combined);
+        // debugRenderer.render(gameWorld.world, camera.combined);
+
+
 
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
@@ -139,6 +143,9 @@ public class GameWorldRenderer extends InputAdapter {
             renderer.tick(delta);
             renderer.render(batch);
         }
+
+        batch.draw(ground, -30, -30, 60, 20);
+
         batch.end();
 
 
