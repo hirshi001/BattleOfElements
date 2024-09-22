@@ -13,26 +13,31 @@ public class ServerLauncher {
 
     public static void main(String[] args) throws IOException {
 
-
         String password = null;
+        String path = null;
         int websocketPort = 3000, javaPort = 4000;
+
         if(args.length >= 1) {
             password = args[0];
         }
         if(args.length >= 2) {
-            websocketPort = Integer.parseInt(args[1]);
+            path = args[1];
         }
         if(args.length >= 3) {
-            javaPort = Integer.parseInt(args[2]);
+            websocketPort = Integer.parseInt(args[2]);
         }
-        createApplication(password, websocketPort, javaPort);
+        if(args.length >= 4) {
+            javaPort = Integer.parseInt(args[3]);
+        }
+
+        createApplication(password, path, websocketPort, javaPort);
 
     }
 
 
-    private static Application createApplication(String password, int websocketPort, int javaPort) {
+    private static Application createApplication(String password, String path, int websocketPort, int javaPort) {
         // Note: you can use a custom ApplicationListener implementation for the headless project instead of GameApp.
-        return new HeadlessApplication(new ServerApplication(password, websocketPort, javaPort), getDefaultConfiguration());
+        return new HeadlessApplication(new ServerApplication(password, path, websocketPort, javaPort), getDefaultConfiguration());
     }
 
     private static HeadlessApplicationConfiguration getDefaultConfiguration() {

@@ -100,7 +100,7 @@ public class GameApp extends Game {
 
         NetworkData networkData = new DefaultNetworkData(new SimplePacketEncoderDecoder(), packetRegistryContainer);
         try {
-            client = networkFactory.createClient(networkData, bufferFactory, "localhost", port);
+            client = networkFactory.createClient(networkData, bufferFactory, "hrishislife.com", port);
             client.setClientOption(ClientOption.TCP_PACKET_CHECK_INTERVAL, -1);
             client.setClientOption(ClientOption.UDP_PACKET_CHECK_INTERVAL, -1);
 
@@ -164,7 +164,7 @@ public class GameApp extends Game {
             time = 0;
             client.getChannel().sendTCP(new MaintainConnectionPacket(), null).perform();
         }
-        if (client.getChannel() != null) {
+        if (client.getChannel() != null && client.getChannel().isOpen()) {
             if(client.supportsTCP()) {
                 client.getChannel().checkTCPPackets();
                 client.getChannel().flushTCP();

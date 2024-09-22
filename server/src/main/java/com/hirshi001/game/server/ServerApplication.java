@@ -73,15 +73,17 @@ public class ServerApplication extends ApplicationAdapter {
     public LobbyManager lobbyManager = new LobbyManager();
     private Server javaServer, websocketServer;
 
-    private String password;
+    private final String password;
+    private final String path;
 
     public static ServerApplication instance() {
         return instance;
     }
 
-    public ServerApplication(String password, int websocketPort, int javaPort) {
+    public ServerApplication(String password, String path, int websocketPort, int javaPort) {
         super();
         this.password = password;
+        this.path = path;
         this.websocketPort = websocketPort;
         this.javaPort = javaPort;
         instance = this;
@@ -182,7 +184,7 @@ public class ServerApplication extends ApplicationAdapter {
         websocketServer.setChannelInitializer(channelInitializer);
         websocketServer.setServerOption(ServerOption.TCP_PACKET_CHECK_INTERVAL, -1);
         websocketServer.addServerListener(serverListener);
-        setSSL((WebsocketServer) websocketServer, password); // TODO: Set Keystore password
+        setSSL((WebsocketServer) websocketServer, password, path); // TODO: Set Keystore password
         websocketServer.startTCP().onFailure(Throwable::printStackTrace).perform().get();
         System.out.println("WebsocketServer started on " + websocketServer.getPort());
 
@@ -198,7 +200,7 @@ public class ServerApplication extends ApplicationAdapter {
 
     }
 
-    private void setSSL(WebsocketServer websocketServer, String keystorePassword) {
+    private void setSSL(WebsocketServer websocketServer, String keystorePassword, String path) {
         if (keystorePassword == null) {
             System.out.println("No keystore password provided, not setting SSL");
             return;
@@ -208,7 +210,7 @@ public class ServerApplication extends ApplicationAdapter {
             final char[] passwordChars = password.toCharArray();
 
             KeyStore keyStore = KeyStore.getInstance("PKCS12");
-            keyStore.load(new FileInputStream("cert.pkcs12"), passwordChars);
+            keyStore.load(new FileInputStream(path), passwordChars);
 
             KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
             kmf.init(keyStore, passwordChars);
