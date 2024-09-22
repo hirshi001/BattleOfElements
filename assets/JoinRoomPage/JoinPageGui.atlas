@@ -1,0 +1,41 @@
+
+JoinPageGui.png
+size: 512, 512
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+TextButton
+  rotate: false
+  xy: 1, 463
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+TextButtonDown
+  rotate: false
+  xy: 1, 445
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+TextButtonOver
+  rotate: false
+  xy: 19, 463
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+TextLabel
+  rotate: false
+  xy: 1, 427
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+Bubbly-Regular(2)
+  rotate: false
+  xy: 1, 481
+  size: 506, 24
+  orig: 506, 24
+  offset: 0, 0
+  index: -1

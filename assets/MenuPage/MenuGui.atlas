@@ -1,0 +1,43 @@
+
+MenuGui.png
+size: 512, 512
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+TeXtButtonDown
+  rotate: false
+  xy: 1, 419
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+TeXtButtonOver
+  rotate: false
+  xy: 19, 437
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+TextButton.9
+  rotate: false
+  xy: 1, 437
+  size: 16, 16
+  split: 7, 7, 7, 7
+  pad: 0, 0, 0, 0
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+Bubbly-Regular
+  rotate: false
+  xy: 1, 481
+  size: 506, 24
+  orig: 506, 24
+  offset: 0, 0
+  index: -1
+Bubbly-Regular(1)
+  rotate: false
+  xy: 1, 455
+  size: 506, 24
+  orig: 506, 24
+  offset: 0, 0
+  index: -1

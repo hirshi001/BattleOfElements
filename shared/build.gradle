@@ -1,0 +1,8 @@
+eclipse.project.name = appName + '-shared'
+
+dependencies {
+    api "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+    api "com.badlogicgames.gdx:gdx:$gdxVersion"
+
+    api "com.github.hirshi001:betternetworking:$betterNetworkingVersion"
+}

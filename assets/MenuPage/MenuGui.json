@@ -1,0 +1,109 @@
+{
+"com.badlogic.gdx.graphics.g2d.BitmapFont": {
+	"Bubbly-Regular-Black": {
+		"file": "Bubbly-Regular.fnt",
+		"scaledSize": -1,
+		"markupEnabled": false,
+		"flip": false
+	},
+	"Bubbly-Regular-White": {
+		"file": "Bubbly-Regular(1).fnt",
+		"scaledSize": -1,
+		"markupEnabled": false,
+		"flip": false
+	}
+},
+"com.badlogic.gdx.graphics.Color": {
+	"Black": {
+		"r": 0,
+		"g": 0,
+		"b": 0,
+		"a": 1
+	},
+	"White": {
+		"r": 1,
+		"g": 1,
+		"b": 1,
+		"a": 1
+	}
+},
+"com.ray3k.tenpatch.TenPatchDrawable": {
+	"TextButton": {
+		"region": "TextButton.9",
+		"horizontalStretchAreas": [ 6, 9 ],
+		"verticalStretchAreas": [ 6, 9 ],
+		"tiling": false,
+		"minWidth": 16,
+		"minHeight": 16,
+		"rightWidth": 6,
+		"leftWidth": 6,
+		"bottomHeight": 6,
+		"topHeight": 6,
+		"offsetX": 0,
+		"offsetY": 0,
+		"offsetXspeed": 0,
+		"offsetYspeed": 0,
+		"frameDuration": 0.03,
+		"regions": [],
+		"playMode": 2,
+		"crushMode": 0
+	},
+	"TextButtonDown": {
+		"region": "TeXtButtonDown",
+		"horizontalStretchAreas": [ 6, 9 ],
+		"verticalStretchAreas": [ 6, 9 ],
+		"tiling": false,
+		"minWidth": 16,
+		"minHeight": 16,
+		"rightWidth": 6,
+		"leftWidth": 6,
+		"bottomHeight": 6,
+		"topHeight": 6,
+		"offsetX": 0,
+		"offsetY": 0,
+		"offsetXspeed": 0,
+		"offsetYspeed": 0,
+		"frameDuration": 0.03,
+		"regions": [],
+		"playMode": 2,
+		"crushMode": 0
+	},
+	"TeXtButtonOver10": {
+		"region": "TeXtButtonOver",
+		"horizontalStretchAreas": [ 6, 9 ],
+		"verticalStretchAreas": [ 6, 9 ],
+		"tiling": false,
+		"minWidth": 16,
+		"minHeight": 16,
+		"rightWidth": 6,
+		"leftWidth": 6,
+		"bottomHeight": 6,
+		"topHeight": 6,
+		"offsetX": 0,
+		"offsetY": 0,
+		"offsetXspeed": 0,
+		"offsetYspeed": 0,
+		"frameDuration": 0.03,
+		"regions": [],
+		"playMode": 2,
+		"crushMode": 0
+	}
+},
+"com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
+	"default": {
+		"up": "TextButton",
+		"down": "TextButtonDown",
+		"over": "TeXtButtonOver10"
+	}
+},
+"com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle": {
+	"default": {
+		"font": "Bubbly-Regular-White",
+		"fontColor": "White",
+		"up": "TextButton",
+		"down": "TextButtonDown",
+		"over": "TeXtButtonOver10",
+		"focused": "TeXtButtonOver10"
+	}
+}
+}
