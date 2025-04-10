@@ -16,6 +16,7 @@
 
 package com.hirshi001.game.lwjgl3;
 
+import io.github.pixee.security.BoundedLineReader;
 import org.lwjgl.system.macosx.LibC;
 
 import java.io.BufferedReader;
@@ -141,7 +142,7 @@ public class StartupHelper {
                         new InputStreamReader(process.getInputStream()));
                 String line;
 
-                while ((line = processOutput.readLine()) != null) {
+                while ((line = BoundedLineReader.readLine(processOutput, 5_000_000)) != null) {
                     System.out.println(line);
                 }
 
