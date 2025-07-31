@@ -1,10 +1,11 @@
 package com.hirshi001.game.util;
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 public class UUID {
 
-    private static final Random random = new Random();
+    private static final Random random = new SecureRandom();
 
     long mostSigBits;
     long leastSigBits;
